@@ -1,0 +1,28 @@
+
+const callbackFun = (btn) => {
+    const inputDob = document.getElementById("dob").value;
+    const output = document.getElementById("output");
+
+    const currentdate = new Date();
+    const userDate = new Date(inputDob);
+    console.log("input dob");
+    const currentDateInYear = currentDate.getFullYear();
+    const currentDateInMonth = currentDate.getMonth();
+    const userDateInYear = userDate.getFullYear();
+
+    const userDateInMonth = userDate.getMonth();
+    let age = currentDateInYear - userDateInYear;
+    if (currentDateInMonth < userDateInMonth) {
+        age--;
+    }
+    if (ageInMonth < 0) {
+        ageInMonth += 12;
+    }
+
+        output.innerText = `User's Age is ${age} Year and ${ageInMonth} months`
+    ;
+    
+    
+}
+const btn = document.getElementById("btn");
+btn.addEventListener("click", callbackFun);
